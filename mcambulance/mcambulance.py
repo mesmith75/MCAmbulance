@@ -71,14 +71,13 @@ class MCAmbulance:
             self._decay = BtoD1stlnu_ISGW2(kin_conf_dict[(bmeson, "d2420pi", lepton)], ff_conf_dict["d1p_isgw2"])
         elif channel == "d2430_dstar_pi_isgw2": # D'_10
             self._decay = BtoD1plnu_ISGW2(kin_conf_dict[(bmeson, "d2430pi", lepton)], ff_conf_dict["d1p_isgw2"])
-
-
-
+        elif channel == "d0_dstar_pipi_isgw2":
+            self._decay = BtoD0lnu_ISGW2(kin_conf_dict[(bmeson, "d0", lepton, "dstar_pipi")], ff_conf_dict["d0_isgw2"])
+        elif channel == "d1p_d_pipi_isgw2":
+            self._decay = BtoD1plnu_ISGW2(kin_conf_dict[(bmeson, "d1p", lepton, "d_pipi")], ff_conf_dict["d1p_isgw2"])
         elif channel == "rho":
-            print("Initializing the B+ -> rho mu nu code, this will generate warnings due to a singularity in the q2 spectrum present in the EvtGen module.")
-            if lepton != "mu" or bmeson != "bp":
-                raise Exception("Only B+ -> rho0 mu nu decays are supported")
-            self._decay = BtoRholnu_BCL(kin_conf_dict[("bp", "rho", "mu")], ff_conf_dict["rho"])
+            print(f"Initializing the B -> rho {lepton} nu code, this will generate warnings due to a singularity in the q2 spectrum present in the EvtGen module.")
+            self._decay = BtoRholnu_BCL(kin_conf_dict[(bmeson, "rho", lepton)], ff_conf_dict[(bmeson, "rho")])
         else:
             raise Exception("Decay not supported")
 

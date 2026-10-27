@@ -18,9 +18,11 @@ The following decays are supported:
 - $B \rightarrow D_1^\prime(\rightarrow D \pi \pi) \ell \nu$, based on [1196700001.dec](https://github.com/belle2/basf2/blob/main/decfiles/dec/1196700001.dec) and [1296700001.dec](https://github.com/belle2/basf2/blob/main/decfiles/dec/1296700001.dec)
 - $B \rightarrow D_1^\prime(\rightarrow D^\ast \pi \pi) \ell \nu$, based on [1196700002.dec](https://github.com/belle2/basf2/blob/main/decfiles/dec/1196700002.dec) and [1296700002.dec](https://github.com/belle2/basf2/blob/main/decfiles/dec/1296700002.dec)
 
-In addition, we provide ```ISGW2``` implementations of
+In addition, as requested by LHCb members, we provide ```ISGW2``` implementations of
 - $B \rightarrow D_0^\ast(\rightarrow D \pi) \ell \nu$
 - $B \rightarrow D_1^\prime(\rightarrow D^\ast \pi) \ell \nu$
+- $B \rightarrow D_0^\ast(\rightarrow D^\ast \pi\pi) \ell \nu$
+- $B \rightarrow D_1^\prime(\rightarrow D \pi\pi) \ell \nu$
 
 Note that decays simulated with the ```PHSP``` model are not affected, and so we do not provide code to reweight them.
 
@@ -59,10 +61,16 @@ The constructor of ```MCAmbulance``` takes three arguments:
 - ```channel```: ```d0_d_pi```, ```d0_d_eta```, ```d0_d_pipi```, ```d0_dstar_pipi```, ```d1p_dstar_pi```, ...
 - ```lepton```: ```e```, ```mu``` or ```tau```
 
-To select the ```ISGW2``` implementations, ```channel``` is either ```d0_d_pi_isgw2``` or ```d1p_dstar_pi_isgw2```.
+To select the ```ISGW2``` implementations, ```channel``` can be:
+- ```d0_d_pi_isgw2```
+- ```d0_dstar_pipi_isgw2```
+- ```d1p_dstar_pi_isgw2```
+- ```d1p_d_pipi_isgw2```
 
-In addition, we support the ```BCL``` model for $B^+\rightarrow\rho^0\mu^+\nu_\mu$ decays.
+In addition, we support the ```BCL``` model for $B\rightarrow\rho\ell\nu_\ell$ decays.
 This EvtGen model has an additional problem, a division by zero in a basis change, which we reproduce as closely as feasible.
+
+**Note:** please double-check the default FF parameterizations align with your generator values.
 
 # References
 If you use MCAmbulance, you should cite the following references:
@@ -78,4 +86,6 @@ If you use MCAmbulance, you should cite the following references:
  * Raynette van Tonder <raynette.vantonder@kit.edu>
 
 # Contributors
+ * Tia Crane
+ * Dylan Houston
  * Ilias Tsaklidis
