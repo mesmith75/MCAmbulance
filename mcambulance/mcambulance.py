@@ -21,14 +21,14 @@ import numpy as np
 from copy import deepcopy
 
 from .ff_hqet import BtoD0lnu_HQET, BtoD1plnu_HQET
-from .ff_isgw2 import BtoD0lnu_ISGW2, BtoD1plnu_ISGW2
+from .ff_isgw2 import BtoD0lnu_ISGW2, BtoD1plnu_ISGW2, BtoD1stlnu_ISGW2, BtoD2640lnu_ISGW2, BtoD2500lnu_ISGW2
 from .ff_bcl import BtoRholnu_BCL
 from .defaults import ff_conf_dict, kin_conf_dict
 
 class MCAmbulance:
     def __init__(self, bmeson, channel, lepton):
         self._decay = None
-
+        print("channel: ", channel)
         if channel == "d0_d_pi":
             self._decay = BtoD0lnu_HQET(kin_conf_dict[(bmeson, "d0", lepton)], ff_conf_dict["d0"])
         elif channel == "d1p_dstar_pi":
@@ -49,6 +49,31 @@ class MCAmbulance:
             self._decay = BtoD0lnu_ISGW2(kin_conf_dict[(bmeson, "d0", lepton)], ff_conf_dict["d0_isgw2"])
         elif channel == "d1p_dstar_pi_isgw2":
             self._decay = BtoD1plnu_ISGW2(kin_conf_dict[(bmeson, "d1p", lepton)], ff_conf_dict["d1p_isgw2"])
+        elif channel == "d2st_dstar_pi_isgw2":
+            self._decay = BtoD1plnu_ISGW2(kin_conf_dict[(bmeson, "d2st", lepton)], ff_conf_dict["d1p_isgw2"])
+        elif channel == "d1st_dstar_pi_isgw2":
+            self._decay = BtoD1stlnu_ISGW2(kin_conf_dict[(bmeson, "d1st", lepton)], ff_conf_dict["d1p_isgw2"])
+        elif channel == "d2500_dstar_pi_isgw2": #D(2S)
+            self._decay = BtoD2500lnu_ISGW2(kin_conf_dict[(bmeson, "d2500", lepton)], ff_conf_dict["d1p_isgw2"])
+        elif channel == "d2640_dstar_pi_isgw2":
+            self._decay = BtoD2640lnu_ISGW2(kin_conf_dict[(bmeson, "d2640", lepton)], ff_conf_dict["d1p_isgw2"])
+        elif channel == "d2750_dstar_pi_isgw2":
+            self._decay = BtoD1plnu_ISGW2(kin_conf_dict[(bmeson, "d2750", lepton)], ff_conf_dict["d1p_isgw2"])
+        elif channel == "d3000_dstar_pipi_isgw2": # D_1
+            self._decay = BtoD1stlnu_ISGW2(kin_conf_dict[(bmeson, "d3000pipi", lepton)], ff_conf_dict["d1p_isgw2"])
+        elif channel == "d2580_dstar_pipi_isgw2": # D(2S):
+            self._decay = BtoD2500lnu_ISGW2(kin_conf_dict[(bmeson, "d2580pipi", lepton)], ff_conf_dict["d1p_isgw2"])
+        elif channel == "d2640_dstar_pipi_isgw2": #D*(2S):
+            self._decay = BtoD2640lnu_ISGW2(kin_conf_dict[(bmeson, "d2640pipi", lepton)], ff_conf_dict["d1p_isgw2"])
+        elif channel == "d2300_dstar_pipi_isgw2": # D_0*:
+            self._decay = BtoD0lnu_ISGW2(kin_conf_dict[(bmeson, "d2300pipi", lepton)], ff_conf_dict["d0_isgw2"])
+        elif channel == "d2420_dstar_pi_isgw2": # D_10
+            self._decay = BtoD1stlnu_ISGW2(kin_conf_dict[(bmeson, "d2420pi", lepton)], ff_conf_dict["d1p_isgw2"])
+        elif channel == "d2430_dstar_pi_isgw2": # D'_10
+            self._decay = BtoD1plnu_ISGW2(kin_conf_dict[(bmeson, "d2430pi", lepton)], ff_conf_dict["d1p_isgw2"])
+
+
+
         elif channel == "rho":
             print("Initializing the B+ -> rho mu nu code, this will generate warnings due to a singularity in the q2 spectrum present in the EvtGen module.")
             if lepton != "mu" or bmeson != "bp":
