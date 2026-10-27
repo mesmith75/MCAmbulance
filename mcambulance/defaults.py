@@ -64,8 +64,8 @@ gam_D0_0 = 274.0e-3
 
 m_D1p_pm = 2427.0e-3
 gam_D1p_pm = 314.0e-3
-m_D1p_0 = 2427.0e-3
-gam_D1p_0 = 314.0e-3
+m_D1p_0 = 2.4450 # 2427.0e-3
+gam_D1p_0 = 0.2503 # 314.0e-3
 
 m_B_pm = 5279.34e-3
 m_B_0 = 5279.65e-3
@@ -147,6 +147,69 @@ bp_d1p_mu_basf2_kin_conf.m_l = m_mu
 bp_d1p_tau_basf2_kin_conf = deepcopy(bp_d1p_e_basf2_kin_conf)
 bp_d1p_tau_basf2_kin_conf.m_l = m_tau
 
+bp_d2st_mu_basf2_kin_conf = deepcopy(bp_d1p_mu_basf2_kin_conf)
+bp_d2st_mu_basf2_kin_conf.m_nom = 2.4607
+bp_d2st_mu_basf2_kin_conf.g_nom = 0.0475
+
+bp_d1st_mu_basf2_kin_conf = deepcopy(bp_d1p_mu_basf2_kin_conf)
+bp_d1st_mu_basf2_kin_conf.m_nom = 2.4208
+bp_d1st_mu_basf2_kin_conf.g_nom = 0.0271
+
+b0_d1st_mu_basf2_kin_conf = deepcopy(bp_d1p_mu_basf2_kin_conf)
+b0_d1st_mu_basf2_kin_conf.m_1 = m_B_0
+b0_d1st_mu_basf2_kin_conf.m_nom = 2.4208
+b0_d1st_mu_basf2_kin_conf.g_nom = 0.0271
+
+b0_d2500_mu_basf2_kin_conf = deepcopy(bp_d1p_mu_basf2_kin_conf)
+b0_d2500_mu_basf2_kin_conf.m_1 = m_B_0
+b0_d2500_mu_basf2_kin_conf.m_nom = 2.518
+b0_d2500_mu_basf2_kin_conf.g_nom = 0.199
+
+b0_d2640_mu_basf2_kin_conf = deepcopy(bp_d1p_mu_basf2_kin_conf)
+b0_d2640_mu_basf2_kin_conf.m_1 = m_B_0
+b0_d2640_mu_basf2_kin_conf.m_nom = 2.6419
+b0_d2640_mu_basf2_kin_conf.g_nom = 0.149
+
+b0_d2750_mu_basf2_kin_conf = deepcopy(bp_d1p_mu_basf2_kin_conf)
+b0_d2750_mu_basf2_kin_conf.m_1 = m_B_0
+b0_d2750_mu_basf2_kin_conf.m_nom = 2.751
+b0_d2750_mu_basf2_kin_conf.g_nom = 0.102
+
+bp_d2500_mu_basf2_kin_conf = deepcopy(bp_d1p_mu_basf2_kin_conf)
+bp_d2500_mu_basf2_kin_conf.m_nom = 2.518
+bp_d2500_mu_basf2_kin_conf.g_nom = 0.199
+
+bp_d2640_mu_basf2_kin_conf = deepcopy(bp_d1p_mu_basf2_kin_conf)
+bp_d2640_mu_basf2_kin_conf.m_nom = 2.6419
+bp_d2640_mu_basf2_kin_conf.g_nom = 0.149
+
+bp_d2750_mu_basf2_kin_conf = deepcopy(bp_d1p_mu_basf2_kin_conf)
+bp_d2750_mu_basf2_kin_conf.m_nom = 2.751
+bp_d2750_mu_basf2_kin_conf.g_nom = 0.102
+
+
+bp_d2640pipi_mu_basf2_kin_conf = deepcopy(bp_d1p_mu_basf2_kin_conf)
+bp_d2640pipi_mu_basf2_kin_conf.m_nom = 2.6492
+bp_d2640pipi_mu_basf2_kin_conf.g_nom = 0.14005
+
+b0_d2640pipi_mu_basf2_kin_conf = deepcopy(bp_d1p_mu_basf2_kin_conf)
+b0_d2640pipi_mu_basf2_kin_conf.m_1 = m_B_0
+b0_d2640pipi_mu_basf2_kin_conf.m_nom = 2.6492
+b0_d2640pipi_mu_basf2_kin_conf.g_nom = 0.14005
+
+
+bp_d2500_mu_basf2_kin_conf = deepcopy(bp_d1p_mu_basf2_kin_conf)
+bp_d2500_mu_basf2_kin_conf.m_nom = 2.518
+bp_d2500_mu_basf2_kin_conf.g_nom = 0.199
+
+bp_d2640_mu_basf2_kin_conf = deepcopy(bp_d1p_mu_basf2_kin_conf)
+bp_d2640_mu_basf2_kin_conf.m_nom = 2.6419
+bp_d2640_mu_basf2_kin_conf.g_nom = 0.149
+
+bp_d2750_mu_basf2_kin_conf = deepcopy(bp_d1p_mu_basf2_kin_conf)
+bp_d2750_mu_basf2_kin_conf.m_nom = 2.751
+bp_d2750_mu_basf2_kin_conf.g_nom = 0.102
+
 
 b0_d1p_e_basf2_kin_conf = kin_conf()
 b0_d1p_e_basf2_kin_conf.m_1 = m_B_0
@@ -211,7 +274,6 @@ bp_d1p_mu_pipi_basf2_kin_conf.m_l = m_mu
 bp_d1p_tau_pipi_basf2_kin_conf = deepcopy(bp_d1p_e_pipi_basf2_kin_conf)
 bp_d1p_tau_pipi_basf2_kin_conf.m_l = m_tau
 
-
 b0_d1p_e_pipi_basf2_kin_conf = kin_conf()
 b0_d1p_e_pipi_basf2_kin_conf.m_1 = m_B_0
 b0_d1p_e_pipi_basf2_kin_conf.m_2 = m_D_0
@@ -227,7 +289,6 @@ b0_d1p_mu_pipi_basf2_kin_conf = deepcopy(b0_d1p_e_pipi_basf2_kin_conf)
 b0_d1p_mu_pipi_basf2_kin_conf.m_l = m_mu
 b0_d1p_tau_pipi_basf2_kin_conf = deepcopy(b0_d1p_e_pipi_basf2_kin_conf)
 b0_d1p_tau_pipi_basf2_kin_conf.m_l = m_tau
-
 
 bp_d1p_e_pipi_2_basf2_kin_conf = kin_conf()
 bp_d1p_e_pipi_2_basf2_kin_conf.m_1 = m_B_pm
@@ -331,6 +392,122 @@ b0_d0_tau_pipi_2_basf2_kin_conf = deepcopy(b0_d0_e_pipi_2_basf2_kin_conf)
 b0_d0_tau_pipi_2_basf2_kin_conf.m_l = m_tau
 
 
+bp_d2300pipi_mu_basf2_kin_conf = kin_conf() # D_0*
+bp_d2300pipi_mu_basf2_kin_conf.m_1 = m_B_pm
+bp_d2300pipi_mu_basf2_kin_conf.m_2 = m_Dstar_pm
+bp_d2300pipi_mu_basf2_kin_conf.m_3 = m_pi_pm
+bp_d2300pipi_mu_basf2_kin_conf.m_4 = m_pi_0
+bp_d2300pipi_mu_basf2_kin_conf.m_l = m_mu
+bp_d2300pipi_mu_basf2_kin_conf.m_nom = 2.318
+bp_d2300pipi_mu_basf2_kin_conf.g_nom = 0.267
+bp_d2300pipi_mu_basf2_kin_conf.l = 0
+bp_d2300pipi_mu_basf2_kin_conf.threebody = True
+b0_d2300pipi_mu_basf2_kin_conf = deepcopy(bp_d2300pipi_mu_basf2_kin_conf)
+b0_d2300pipi_mu_basf2_kin_conf.m_1 = m_B_0
+b0_d2300pipi_mu_basf2_kin_conf.m_4 = m_pi_pm
+bp_d2300pipi_tau_basf2_kin_conf = deepcopy(bp_d2300pipi_mu_basf2_kin_conf)
+bp_d2300pipi_tau_basf2_kin_conf.m_l = m_tau
+b0_d2300pipi_tau_basf2_kin_conf = deepcopy(b0_d2300pipi_mu_basf2_kin_conf)
+b0_d2300pipi_tau_basf2_kin_conf.m_l = m_tau
+
+
+bp_d2420pi_mu_basf2_kin_conf = kin_conf() # D_10
+bp_d2420pi_mu_basf2_kin_conf.m_1 = m_B_pm
+bp_d2420pi_mu_basf2_kin_conf.m_2 = m_Dstar_pm
+bp_d2420pi_mu_basf2_kin_conf.m_3 = m_pi_pm
+bp_d2420pi_mu_basf2_kin_conf.m_l = m_mu
+bp_d2420pi_mu_basf2_kin_conf.m_nom = 2.4214
+bp_d2420pi_mu_basf2_kin_conf.g_nom = 0.0271
+bp_d2420pi_mu_basf2_kin_conf.l = 0
+bp_d2420pi_mu_basf2_kin_conf.threebody =False 
+b0_d2420pi_mu_basf2_kin_conf = deepcopy(bp_d2420pi_mu_basf2_kin_conf)
+b0_d2420pi_mu_basf2_kin_conf.m_1 = m_B_0
+b0_d2420pi_mu_basf2_kin_conf.m_3 = m_pi_0
+b0_d2420pi_mu_basf2_kin_conf.m_nom = 2.4230
+b0_d2420pi_mu_basf2_kin_conf.g_nom = 0.020064
+bp_d2420pi_tau_basf2_kin_conf = deepcopy(bp_d2420pi_mu_basf2_kin_conf)
+bp_d2420pi_tau_basf2_kin_conf.m_l = m_tau
+b0_d2420pi_tau_basf2_kin_conf = deepcopy(b0_d2420pi_mu_basf2_kin_conf)
+b0_d2420pi_tau_basf2_kin_conf.m_l = m_tau
+
+
+
+bp_d2430pi_mu_basf2_kin_conf = kin_conf() # D'_1
+bp_d2430pi_mu_basf2_kin_conf.m_1 = m_B_pm
+bp_d2430pi_mu_basf2_kin_conf.m_2 = m_Dstar_pm
+bp_d2430pi_mu_basf2_kin_conf.m_3 = m_pi_pm
+bp_d2430pi_mu_basf2_kin_conf.m_l = m_mu
+bp_d2430pi_mu_basf2_kin_conf.m_nom = 2.445
+bp_d2430pi_mu_basf2_kin_conf.g_nom = 0.25027
+bp_d2430pi_mu_basf2_kin_conf.l = 0
+bp_d2430pi_mu_basf2_kin_conf.threebody =False 
+b0_d2430pi_mu_basf2_kin_conf = deepcopy(bp_d2430pi_mu_basf2_kin_conf)
+b0_d2430pi_mu_basf2_kin_conf.m_1 = m_B_0
+b0_d2430pi_mu_basf2_kin_conf.m_3 = m_pi_0
+bp_d2430pi_tau_basf2_kin_conf = deepcopy(bp_d2430pi_mu_basf2_kin_conf)
+bp_d2430pi_tau_basf2_kin_conf.m_l = m_tau
+b0_d2430pi_tau_basf2_kin_conf = deepcopy(b0_d2430pi_mu_basf2_kin_conf)
+b0_d2430pi_tau_basf2_kin_conf.m_l = m_tau
+
+
+
+bp_d2640pipi_mu_basf2_kin_conf = kin_conf() # D*(2S)
+bp_d2640pipi_mu_basf2_kin_conf.m_1 = m_B_pm
+bp_d2640pipi_mu_basf2_kin_conf.m_2 = m_Dstar_pm
+bp_d2640pipi_mu_basf2_kin_conf.m_3 = m_pi_pm
+bp_d2640pipi_mu_basf2_kin_conf.m_4 = m_pi_0
+bp_d2640pipi_mu_basf2_kin_conf.m_l = m_mu
+bp_d2640pipi_mu_basf2_kin_conf.m_nom = 2.6492
+bp_d2640pipi_mu_basf2_kin_conf.g_nom = 0.14005
+bp_d2640pipi_mu_basf2_kin_conf.l = 0
+bp_d2640pipi_mu_basf2_kin_conf.threebody = True
+b0_d2640pipi_mu_basf2_kin_conf = deepcopy(bp_d2640pipi_mu_basf2_kin_conf)
+b0_d2640pipi_mu_basf2_kin_conf.m_1 = m_B_0
+b0_d2640pipi_mu_basf2_kin_conf.m_4 = m_pi_pm
+bp_d2640pipi_tau_basf2_kin_conf = deepcopy(bp_d2640pipi_mu_basf2_kin_conf)
+bp_d2640pipi_tau_basf2_kin_conf.m_l = m_tau
+b0_d2640pipi_tau_basf2_kin_conf = deepcopy(b0_d2640pipi_mu_basf2_kin_conf)
+b0_d2640pipi_tau_basf2_kin_conf.m_l = m_tau
+
+bp_d2580pipi_mu_basf2_kin_conf = kin_conf() # D(2S)
+bp_d2580pipi_mu_basf2_kin_conf.m_1 = m_B_pm
+bp_d2580pipi_mu_basf2_kin_conf.m_2 = m_Dstar_pm
+bp_d2580pipi_mu_basf2_kin_conf.m_3 = m_pi_pm
+bp_d2580pipi_mu_basf2_kin_conf.m_4 = m_pi_0
+bp_d2580pipi_mu_basf2_kin_conf.m_l = m_mu
+bp_d2580pipi_mu_basf2_kin_conf.m_nom = 2.579
+bp_d2580pipi_mu_basf2_kin_conf.g_nom = 0.178377
+bp_d2580pipi_mu_basf2_kin_conf.l = 0
+bp_d2580pipi_mu_basf2_kin_conf.threebody = True
+b0_d2580pipi_mu_basf2_kin_conf = deepcopy(bp_d2580pipi_mu_basf2_kin_conf)
+b0_d2580pipi_mu_basf2_kin_conf.m_1 = m_B_0
+b0_d2580pipi_mu_basf2_kin_conf.m_4 = m_pi_pm
+bp_d2580pipi_tau_basf2_kin_conf = deepcopy(bp_d2580pipi_mu_basf2_kin_conf)
+bp_d2580pipi_tau_basf2_kin_conf.m_l = m_tau
+b0_d2580pipi_tau_basf2_kin_conf = deepcopy(b0_d2580pipi_mu_basf2_kin_conf)
+b0_d2580pipi_tau_basf2_kin_conf.m_l = m_tau
+
+
+
+bp_d3000pipi_mu_basf2_kin_conf = kin_conf() # D_1
+bp_d3000pipi_mu_basf2_kin_conf.m_1 = m_B_pm
+bp_d3000pipi_mu_basf2_kin_conf.m_2 = m_Dstar_pm
+bp_d3000pipi_mu_basf2_kin_conf.m_3 = m_pi_pm
+bp_d3000pipi_mu_basf2_kin_conf.m_4 = m_pi_0
+bp_d3000pipi_mu_basf2_kin_conf.m_l = m_mu
+bp_d3000pipi_mu_basf2_kin_conf.m_nom = 2.978
+bp_d3000pipi_mu_basf2_kin_conf.g_nom = 0.18806
+bp_d3000pipi_mu_basf2_kin_conf.l = 0
+bp_d3000pipi_mu_basf2_kin_conf.threebody = True
+b0_d3000pipi_mu_basf2_kin_conf = deepcopy(bp_d3000pipi_mu_basf2_kin_conf)
+b0_d3000pipi_mu_basf2_kin_conf.m_1 = m_B_0
+b0_d3000pipi_mu_basf2_kin_conf.m_4 = m_pi_pm
+bp_d3000pipi_tau_basf2_kin_conf = deepcopy(bp_d3000pipi_mu_basf2_kin_conf)
+bp_d3000pipi_tau_basf2_kin_conf.m_l = m_tau
+b0_d3000pipi_tau_basf2_kin_conf = deepcopy(b0_d3000pipi_mu_basf2_kin_conf)
+b0_d3000pipi_tau_basf2_kin_conf.m_l = m_tau
+
+
 kin_conf_dict = {}
 kin_conf_dict[('bp', 'd0', 'e')] = bp_d0_e_basf2_kin_conf
 kin_conf_dict[('bp', 'd0', 'mu')] = bp_d0_mu_basf2_kin_conf
@@ -340,6 +517,55 @@ kin_conf_dict[('b0', 'd0', 'mu')] = b0_d0_mu_basf2_kin_conf
 kin_conf_dict[('b0', 'd0', 'tau')] = b0_d0_tau_basf2_kin_conf
 kin_conf_dict[('bp', 'd1p', 'e')] = bp_d1p_e_basf2_kin_conf
 kin_conf_dict[('bp', 'd1p', 'mu')] = bp_d1p_mu_basf2_kin_conf
+
+kin_conf_dict[('bp', 'd1st', 'mu')] = bp_d1st_mu_basf2_kin_conf
+kin_conf_dict[('b0', 'd1st', 'mu')] = b0_d1st_mu_basf2_kin_conf
+
+kin_conf_dict[('bp', 'd2st', 'mu')] = bp_d2st_mu_basf2_kin_conf
+
+kin_conf_dict[('bp', 'd2500', 'mu')] = bp_d2500_mu_basf2_kin_conf
+kin_conf_dict[('bp', 'd2640', 'mu')] = bp_d2640_mu_basf2_kin_conf
+kin_conf_dict[('bp', 'd2750', 'mu')] = bp_d2750_mu_basf2_kin_conf
+
+kin_conf_dict[('b0', 'd2500', 'mu')] = b0_d2500_mu_basf2_kin_conf
+kin_conf_dict[('b0', 'd2640', 'mu')] = b0_d2640_mu_basf2_kin_conf
+kin_conf_dict[('b0', 'd2750', 'mu')] = b0_d2750_mu_basf2_kin_conf
+
+kin_conf_dict[('bp', 'd2300pipi', 'mu')] = bp_d2300pipi_mu_basf2_kin_conf
+kin_conf_dict[('bp', 'd2420pi', 'mu')] = bp_d2420pi_mu_basf2_kin_conf
+kin_conf_dict[('bp', 'd2430pi', 'mu')] = bp_d2430pi_mu_basf2_kin_conf
+
+kin_conf_dict[('b0', 'd2300pipi', 'mu')] = b0_d2300pipi_mu_basf2_kin_conf
+kin_conf_dict[('b0', 'd2420pi', 'mu')] = b0_d2420pi_mu_basf2_kin_conf
+kin_conf_dict[('b0', 'd2430pi', 'mu')] = b0_d2430pi_mu_basf2_kin_conf
+
+kin_conf_dict[('bp', 'd3000pipi', 'mu')] = bp_d3000pipi_mu_basf2_kin_conf
+kin_conf_dict[('bp', 'd2640pipi', 'mu')] = bp_d2640pipi_mu_basf2_kin_conf
+kin_conf_dict[('bp', 'd2580pipi', 'mu')] = bp_d2580pipi_mu_basf2_kin_conf
+
+kin_conf_dict[('b0', 'd3000pipi', 'mu')] = b0_d3000pipi_mu_basf2_kin_conf
+kin_conf_dict[('b0', 'd2640pipi', 'mu')] = b0_d2640pipi_mu_basf2_kin_conf
+kin_conf_dict[('b0', 'd2580pipi', 'mu')] = b0_d2580pipi_mu_basf2_kin_conf
+
+kin_conf_dict[('bp', 'd2300pipi', 'tau')] = bp_d2300pipi_tau_basf2_kin_conf
+kin_conf_dict[('bp', 'd2420pi', 'tau')] = bp_d2420pi_tau_basf2_kin_conf
+kin_conf_dict[('bp', 'd2430pi', 'tau')] = bp_d2430pi_tau_basf2_kin_conf
+
+kin_conf_dict[('b0', 'd2300pipi', 'tau')] = b0_d2300pipi_tau_basf2_kin_conf
+kin_conf_dict[('b0', 'd2420pi', 'tau')] = b0_d2420pi_tau_basf2_kin_conf
+kin_conf_dict[('b0', 'd2430pi', 'tau')] = b0_d2430pi_tau_basf2_kin_conf
+
+kin_conf_dict[('bp', 'd3000pipi', 'tau')] = bp_d3000pipi_tau_basf2_kin_conf
+kin_conf_dict[('bp', 'd2640pipi', 'tau')] = bp_d2640pipi_tau_basf2_kin_conf
+kin_conf_dict[('bp', 'd2580pipi', 'tau')] = bp_d2580pipi_tau_basf2_kin_conf
+
+kin_conf_dict[('b0', 'd3000pipi', 'tau')] = b0_d3000pipi_tau_basf2_kin_conf
+kin_conf_dict[('b0', 'd2640pipi', 'tau')] = b0_d2640pipi_tau_basf2_kin_conf
+kin_conf_dict[('b0', 'd2580pipi', 'tau')] = b0_d2580pipi_tau_basf2_kin_conf
+
+
+
+
 kin_conf_dict[('bp', 'd1p', 'tau')] = bp_d1p_tau_basf2_kin_conf
 kin_conf_dict[('b0', 'd1p', 'e')] = b0_d1p_e_basf2_kin_conf
 kin_conf_dict[('b0', 'd1p', 'mu')] = b0_d1p_mu_basf2_kin_conf
