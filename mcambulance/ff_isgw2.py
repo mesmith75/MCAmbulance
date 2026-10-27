@@ -86,6 +86,10 @@ class BtoD0lnu_ISGW2(BtoDstarstarlnu):
 
 
 class BtoD2500lnu_ISGW2(BtoDstarstarlnu):
+    # This is what EvtGen refers to as D(2S)0
+    # It is a scalar state, so has the same current structure
+    # as the D_0*0 but different FFs
+
     def __init__(self, kin_conf, isgw2_conf):
         self.lqcd2 = isgw2_conf.lqcd2
         self.nfp = isgw2_conf.nfp
@@ -160,6 +164,8 @@ class BtoD2500lnu_ISGW2(BtoDstarstarlnu):
 
 
 class BtoD1plnu_ISGW2(BtoDstarstarlnu):
+    # This is what EvtGen refers to as D'_10
+    # It is a vector type state
     def __init__(self, kin_conf, isgw2_conf):
         self.lqcd2 = isgw2_conf.lqcd2
         self.nfp = isgw2_conf.nfp
@@ -234,6 +240,9 @@ class BtoD1plnu_ISGW2(BtoDstarstarlnu):
 
 
 class BtoD1stlnu_ISGW2(BtoDstarstarlnu):
+    # This is what EvtGen refers to as a D_10
+    # It is another vector type state so has the same
+    # current structure as the D'_10 but different FFs
     def __init__(self, kin_conf, isgw2_conf):
         self.lqcd2 = isgw2_conf.lqcd2
         self.nfp = isgw2_conf.nfp
@@ -318,6 +327,9 @@ class BtoD1stlnu_ISGW2(BtoDstarstarlnu):
 
 
 class BtoD2640lnu_ISGW2(BtoDstarstarlnu):
+    # This is what EvtGen refers to as a D*2S0
+    # This is another vector state, so has the same current
+    # structure as D'_10 but with different FFs.
     def __init__(self, kin_conf, isgw2_conf):
         self.lqcd2 = isgw2_conf.lqcd2
         self.nfp = isgw2_conf.nfp
